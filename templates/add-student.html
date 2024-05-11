@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+</head>
+<body>
+    <form action="{{ url_for('insert') }}" method="POST" enctype="multipart/form-data">
+            <table style="border: none;">
+            
+                <tr>
+                    <td>Nim</td>
+                    <td> : </td>
+                    <td><input type="text" name="nim"></td>
+                </tr>
+                <tr>
+                    <td>Nama</td>
+                    <td> : </td>
+                    <td><input type="text" name="nama"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td> : </td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Jurusan</td>
+                    <td> : </td>
+                    <td><input type="text" name="jurusan"></td>
+                </tr>
+                <tr>
+                    <td>Gambar</td>
+                    <td> : </td>
+                    <td><input type="file" name="gambar" value="zonk"></td>
+                </tr>
+                
+            </table>
+            <button type="submit" name="create" style="background-color: blue, " >Insert</button>
+    </form>
+    <!-- ni kalau akses route index kok error ya? -->
+    <a href="{{ url_for('main') }}">List Students</a>
+</body>
+</html>

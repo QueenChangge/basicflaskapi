@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+</head>
+<body>
+    {% for row in data %}
+    <form action="{{ url_for('update', id_data=row[0]) }}" method="POST">
+            <table style="border: none;">
+                {{ row[0] }}
+                
+                <!--SEMBUNYIKAN POST ID agar saat proses update id tidak diketahui -->
+                <td><input type="hidden" name="id" value="{{ row[0] }}"></td>
+
+                <tr>
+                    <td>Nim</td>
+                    <td> : </td>
+                    <td><input type="text" name="nim" value="{{ row[3] }}"></td>
+                </tr>
+                <tr>
+                    <td>Nama</td>
+                    <td> : </td>
+                    <td><input type="text" name="nama" value="{{ row[1] }}"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td> : </td>
+                    <td><input type="email" name="email" value="{{ row[2] }}"></td>
+                </tr>
+                <tr>
+                    <td>Jurusan</td>
+                    <td> : </td>
+                    <td><input type="text" name="jurusan" value="{{ row[4] }}"></td>
+                </tr>
+                <tr>
+                    <td>Gambar</td>
+                    <td> : </td>
+                    <td><input type="text" name="gambar" value="{{ row[5] }}"></td>
+                </tr>
+                
+
+            </table>
+            <button type="submit" name="update" style="background-color: blue, " >Update</button>
+    </form>
+    {% endfor %}
+    <a href="{{ url_for('main') }}">List Students</a>
+</body>
+</html>
