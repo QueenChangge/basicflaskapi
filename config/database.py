@@ -9,7 +9,7 @@ import logging
 # # inisialisasi data db
 host = "localhost"
 username = "root"
-password = "Changge_034461"
+password = ""
 db = "python_dasar"
 
 # # menghubungkan python ke db
